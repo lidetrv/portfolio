@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Header = ({ isDarkMode, toggleTheme }) => {
   return (
@@ -6,7 +6,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
       <nav className="container mx-auto flex justify-between items-center">
         {/* Brand */}
         <h1 className="text-xl font-bold">Lidetu Tadesse</h1>
-        
+
         {/* Navigation */}
         <ul className="flex space-x-4 ml-auto">
           <li>
@@ -26,9 +26,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
         {/* Toggle Button */}
         <button
           onClick={toggleTheme}
-          className={`ml-4 px-3 py-1 rounded ${
-            isDarkMode ? "bg-yellow-500 text-black" : "bg-gray-300 text-black"
-          }`}
+          className={`ml-4 px-3 py-1 rounded ${isDarkMode ? "bg-yellow-500 text-black" : "bg-gray-300 text-black"}`}
         >
           {isDarkMode ? "Light Mode" : "Dark Mode"}
         </button>

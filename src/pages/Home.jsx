@@ -1,7 +1,6 @@
-import Header from "../components/Header";
 import AboutSection from "../components/AboutSection"; // Ensure the path to AboutSection is correct
 
-const Home = ({ isDarkMode, toggleTheme }) => {
+const Home = () => {
   return (
     <div>
       {/* <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} /> */}

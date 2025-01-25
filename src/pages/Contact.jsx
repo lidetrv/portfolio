@@ -1,7 +1,5 @@
-import { useState } from "react";
 
 const Contact = () => {
-
 
     
   return (
@@ -83,7 +81,7 @@ const Contact = () => {
             <i className="fab fa-linkedin text-2xl"></i>
           </a>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/tad._lidetu?igsh=YWFiZHNvcDM5Z2F6"
             className="text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out"
             target="_blank"
             rel="noopener noreferrer"
