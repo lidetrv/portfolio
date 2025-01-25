@@ -34,38 +34,51 @@ const Contact = () => {
 
     // Proceed with form submission if valid
     console.log("Form submitted:", { name, email, message });
-    // Add any further submit logic (e.g., sending data to an API)
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50 py-8">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg border border-gray-300">
         <h2 className="text-2xl font-bold text-center mb-6">Contact Me</h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form
+          name="contact"
+          action="/success"
+          method="POST"
+          className="space-y-4"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          
           {/* Name Input */}
           <input
             type="text"
+            name="name"
             placeholder="Your Name"
             className="w-full p-2 border rounded"
             value={name}
-            onChange={(e) => setName(e.target.value)} // Controlled component
+            onChange={(e) => setName(e.target.value)}
+            required
           />
           
           {/* Email Input */}
           <input
             type="email"
+            name="email"
             placeholder="Your Email"
             className="w-full p-2 border rounded"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} // Controlled component
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
           
           {/* Message Textarea */}
           <textarea
+            name="message"
             placeholder="Your Message"
             className="w-full p-2 border rounded"
             value={message}
-            onChange={(e) => setMessage(e.target.value)} // Controlled component
+            onChange={(e) => setMessage(e.target.value)}
+            required
           ></textarea>
 
           {/* Error message */}
