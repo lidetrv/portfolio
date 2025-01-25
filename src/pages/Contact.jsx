@@ -1,41 +1,9 @@
 import { useState } from "react";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState(""); // For storing validation error messages
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    // Reset error message
-    setError("");
-
-    // Validate inputs
-    if (!name || !email || !message) {
-      setError("All fields are required.");
-      return;
-    }
-
-    // Email validation regex
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-
-    // Message word count validation (max 500 words)
-    const wordCount = message.trim().split(/\s+/).length;
-    if (wordCount > 500) {
-      setError("Your message must not exceed 500 words.");
-      return;
-    }
-
-    // Proceed with form submission if valid
-    console.log("Form submitted:", { name, email, message });
-  };
-
+    
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50 py-8">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg border border-gray-300">
@@ -45,7 +13,7 @@ const Contact = () => {
           action="/success"
           method="POST"
           className="space-y-4"
-          onSubmit={handleSubmit}
+         
         >
           <input type="hidden" name="form-name" value="contact" />
           
@@ -55,8 +23,6 @@ const Contact = () => {
             name="name"
             placeholder="Your Name"
             className="w-full p-2 border rounded"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
             required
           />
           
@@ -66,8 +32,7 @@ const Contact = () => {
             name="email"
             placeholder="Your Email"
             className="w-full p-2 border rounded"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            
             required
           />
           
@@ -76,13 +41,11 @@ const Contact = () => {
             name="message"
             placeholder="Your Message"
             className="w-full p-2 border rounded"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            
             required
           ></textarea>
 
-          {/* Error message */}
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+         
           
           {/* Submit Button */}
           <button
