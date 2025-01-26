@@ -1,6 +1,8 @@
 
 import React, { useContext } from "react";
 import { ThemeContext } from "../App";
+import masamo from "../assets/masamo.jpg";
+import birhanu from "../assets/Birhanu.jpg";
 
 const TestimonialCard = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -9,12 +11,12 @@ const TestimonialCard = () => {
   const testimonials = [
     {
       name: "Masamo Mathewos",
-      photo: "src/assets/masamo.jpg",
+      photo: masamo,
       quote: "This developer is amazing! Highly recommend.",
     },
     {
       name: "Birhanu Tesfaye",
-      photo: "src/assets/Birhanu.jpg",
+      photo: birhanu,
       quote: "A pleasure to work with. Delivered on time and exceeded expectations.",
     }
   ];

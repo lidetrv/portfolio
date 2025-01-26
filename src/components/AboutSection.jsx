@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../App";
+import lidetu from "../assets/lide.jpg";
 
 const AboutSection = () => {
   const { isDarkMode } = useContext(ThemeContext); 
@@ -12,7 +13,7 @@ const AboutSection = () => {
       <div className="container mx-auto flex flex-col items-center">
        
         <img
-          src="src\assets\lide.jpg" 
+          src={lidetu}
           alt="About Me"
           className="w-32 h-32 rounded-full shadow-lg ring-4 ring-blue-500"
         />
