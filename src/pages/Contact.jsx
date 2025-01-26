@@ -1,54 +1,70 @@
+import React, { useContext } from "react";
+import { ThemeContext } from "../App";
 
 const Contact = () => {
-
-    
+  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 py-8">
-      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg border border-gray-300">
+    <div
+      className={`flex items-center justify-center min-h-screen py-8 ${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"
+      }`}
+    >
+      <div
+        className={`w-full max-w-md p-6 rounded-lg shadow-lg border ${
+          isDarkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-300"
+        }`}
+      >
         <h2 className="text-2xl font-bold text-center mb-6">Contact Me</h2>
         <form
           name="contact"
           action="/success"
           method="POST"
           className="space-y-4"
-         
         >
           <input type="hidden" name="form-name" value="contact" />
-          
+
           {/* Name Input */}
           <input
             type="text"
             name="name"
             placeholder="Your Name"
-            className="w-full p-2 border rounded"
+            className={`w-full p-2 border rounded ${
+              isDarkMode
+                ? "bg-gray-700 text-white border-gray-600"
+                : "bg-gray-100 text-black border-gray-300"
+            }`}
             required
           />
-          
+
           {/* Email Input */}
           <input
             type="email"
             name="email"
             placeholder="Your Email"
-            className="w-full p-2 border rounded"
-            
+            className={`w-full p-2 border rounded ${
+              isDarkMode
+                ? "bg-gray-700 text-white border-gray-600"
+                : "bg-gray-100 text-black border-gray-300"
+            }`}
             required
           />
-          
+
           {/* Message Textarea */}
           <textarea
             name="message"
             placeholder="Your Message"
-            className="w-full p-2 border rounded"
-            
+            className={`w-full p-2 border rounded ${
+              isDarkMode
+                ? "bg-gray-700 text-white border-gray-600"
+                : "bg-gray-100 text-black border-gray-300"
+            }`}
             required
           ></textarea>
 
-         
-          
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-blue-600 text-white rounded"
+            className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300"
           >
             Submit
           </button>

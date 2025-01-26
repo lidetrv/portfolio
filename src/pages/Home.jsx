@@ -1,14 +1,16 @@
-import AboutSection from "../components/AboutSection"; // Ensure the path to AboutSection is correct
+import AboutSection from "../components/AboutSection";
+import SkillCard from "../components/SkillCard";
 
-const Home = () => {
+const Home = ({ isDarkMode }) => {
   return (
-    <div>
-      {/* <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} /> */}
-      <div className="p-8">
-        {/* <h2 className="text-2xl font-bold">Welcome to My Portfolio</h2>
-        <p>This is the Home Page.</p> */}
-      </div>
-      <AboutSection /> {/* Call AboutSection here */}
+    <div
+      className={`p-8 ${
+        isDarkMode ? "bg-slate-800 text-white" : "bg-white text-black"
+      }`}
+    >
+      
+      <AboutSection />
+      <SkillCard isDarkMode={isDarkMode} />
     </div>
   );
 };

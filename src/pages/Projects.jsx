@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
-  const { darkMode } = useContext(ThemeContext);
+  const { isDarkMode } = useContext(ThemeContext);
 
   // Fetch GitHub repositories
   useEffect(() => {
@@ -16,11 +16,11 @@ const Projects = () => {
   return (
     <div
       className={`min-h-screen p-6 ${
-        darkMode ? "bg-gray-200 text-black" : "bg-slate-900 text-white"
+        isDarkMode ? "bg-slate-900 text-white" : "bg-gray-300 text-black"
       }`}
     >
       <h2 className="text-2xl font-bold">My Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <div className="flex flex-wrap justify-center gap-6">
         {repos.map((repo) => (
           <ProjectCard
             key={repo.id}
