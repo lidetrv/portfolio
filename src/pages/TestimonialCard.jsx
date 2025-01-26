@@ -5,7 +5,7 @@ import { ThemeContext } from "../App";
 const TestimonialCard = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
-  // Limit testimonials to only two
+  
   const testimonials = [
     {
       name: "Masamo Mathewos",
